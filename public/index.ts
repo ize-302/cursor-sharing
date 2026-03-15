@@ -37,7 +37,9 @@ interface CursorMessage {
   }
 
   async function connectToServer() {
-    const ws = new WebSocket("ws://localhost:8080/ws");
+    const ws = new WebSocket(
+      "ws://cursor-sharing-production.up.railway.app/ws",
+    );
     return new Promise<WebSocket>((resolve, reject) => {
       const timer = setInterval(() => {
         if (ws.readyState === 1) {
